@@ -1,0 +1,58 @@
+.modal-hero {
+  inline-size: 90px;
+  block-size: 90px;
+  fill: #007aff;
+  display: block;
+}
+
+.button.button-link {
+  background: transparent;
+  background-image: initial;
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat-x: initial;
+  background-repeat-y: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: transparent;
+  padding: 0;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  border-color: white;
+  border: none;
+  /*border-radius: inherit;*/
+  /*border-top-left-radius: inherit;*/
+  /*border-top-right-radius: inherit;*/
+  /*border-bottom-right-radius: inherit;*/
+  /*border-bottom-left-radius: inherit;*/
+  color: inherit;
+  color: #06c;
+}
+
+.modal-dialog {
+  width: 690px;
+  max-height: 100%;
+  overflow: hidden;
+  /*display: -webkit-box;*/
+  /*display: -webkit-flex;*/
+  /*display: -ms-flexbox;*/
+  /*display: table-cell;*/
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-filter: drop-shadow(0 11px 34px rgba(0,0,0,.2));
+  filter: drop-shadow(0 11px 34px rgba(0,0,0,.2));
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  border-radius: 11px;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  background-color: #fff;
+}
+

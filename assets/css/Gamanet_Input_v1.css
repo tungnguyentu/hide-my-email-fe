@@ -1,0 +1,42 @@
+.gamanet-input {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #2f2e2d;
+  border-radius: 0.25rem;
+  border: 1px solid #d8d6d5;
+  height: 2.5rem;
+  width: 19.5rem;
+  margin: 0.25rem 0;
+  background-color: white;
+}
+
+.gamanet-input::placeholder {
+  padding-left: 0.75rem;
+}
+
+.gamanet-input:focus, .gamanet-input:active {
+  border: 1px solid #f48220;
+}
+
+.gamanet-input:focus-visible {
+  outline: none;
+}
+
+.gamanet-input:disabled {
+  color: #a6a3a0;
+  border: 1px solid #d8d6d5;
+}
+
+.gamanet-input-group.error .gamanet-input {
+  border: 1px solid #ee3a3a;
+}
+
+.gamanet-input-group.error .error-msg {
+  color: #ee3a3a;
+  display: flex !important;
+}
+
+.icon.EmailIcon.EmailIcon-onDemand.icon-size-regular.icon-symbol {
+  color: var(--bs-blue);
+}
+
