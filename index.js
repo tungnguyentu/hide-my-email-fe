@@ -145,7 +145,7 @@ async function renderForwards() {
 }
 
 function redirectHome(){
-    window.location = "/home.html";
+    window.location = "/index.html";
 }
 
 function redirectNew(){
