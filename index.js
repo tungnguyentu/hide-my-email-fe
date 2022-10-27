@@ -67,7 +67,7 @@ async function logout(){
 async function validate(){
     try {
         var requestOptions = {
-            method: 'GET',
+            method: 'POST',
             headers: {
                 'Accept': 'application/json, text/plain, */*',
                 'Content-Type': 'application/json',
