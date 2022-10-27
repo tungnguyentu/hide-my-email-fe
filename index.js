@@ -12,11 +12,12 @@ async function login() {
             },
             body: data,
         };
-        let url = "http://127.0.0.1:8080/auth/token"
+        let url = "http://privaterelay.asia:8080/auth/token"
         let res = await fetch(url, requestOptions);
         result = await res.json();
         if (result.access_token) {
             window.localStorage.setItem("token", result.access_token);
+            window.localStorage.setItem("status", "loggedIn")
             return redirectHome();
         } else {
             return swal("Error", "Tài khoản hoặc mật khẩu không đúng!", "error");
@@ -42,7 +43,7 @@ async function register(){
             },
             body: JSON.stringify(_data),
         };
-        let url = "http://127.0.0.1:8080/auth/register"
+        let url = "http://privaterelay.asia:8080/auth/register"
         let res = await fetch(url, requestOptions);
         result = await res.json();
         if (result.access_token) {
@@ -59,7 +60,29 @@ async function register(){
 
 async function logout(){
     window.localStorage.removeItem("token");
+    window.localStorage.removeItem("status")
     redirectLogin();
+}
+
+async function validate(){
+    try {
+        var requestOptions = {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + window.localStorage.getItem("token")
+            }
+        };
+        let res = await fetch("http://privaterelay.asia:8080/auth/users/me", requestOptions);
+        result = await res.json();
+        if (result.status != 200) {
+            return redirectLogin()
+        }
+    } catch (error) {
+        console.log(error);
+    }
+
 }
 
 
@@ -74,7 +97,7 @@ async function getForwards() {
                 'Authorization': 'Bearer ' + window.localStorage.getItem("token")
             }
         };
-        let res = await fetch("http://127.0.0.1:8080/forwards", requestOptions);
+        let res = await fetch("http://privaterelay.asia:8080/forwards", requestOptions);
         return await res.json();
     } catch (error) {
         console.log(error);
@@ -82,6 +105,7 @@ async function getForwards() {
 }
 
 async function renderForwards() {
+    validate()
     let users = await getForwards()
     let active_forward = '';
     let deactivate_forward = '';
@@ -134,6 +158,9 @@ function redirectLogin(){
 
 /* DETAIL */
 async function detailForward(id) {
+    if (sessionStorage.getItem('status') != null){
+        return redirectLogin()
+    }
     try {
         var requestOptions = {
             method: 'GET',
@@ -143,7 +170,7 @@ async function detailForward(id) {
                 'Authorization': 'Bearer ' + window.localStorage.getItem("token")
             }
         };
-        let url = "http://127.0.0.1:8080/forwards/" + id
+        let url = "http://privaterelay.asia:8080/forwards/" + id
         let res = await fetch(url, requestOptions);
         return await res.json();
     } catch (error) {
@@ -152,6 +179,7 @@ async function detailForward(id) {
 }
 
 async function deactivateForward(id) {
+    validate()
     try {
         var requestOptions = {
             method: 'POST',
@@ -161,7 +189,7 @@ async function deactivateForward(id) {
                 'Authorization': 'Bearer ' + window.localStorage.getItem("token")
             }
         };
-        let url = "http://127.0.0.1:8080/forwards/"+id+"/deactivate"
+        let url = "http://privaterelay.asia:8080/forwards/"+id+"/deactivate"
         let res = await fetch(url, requestOptions);
         return await res.json();
     } catch (error) {
@@ -187,6 +215,7 @@ async function redirectToHome(){
 }
 
 async function renderDetailForward() {
+    validate()
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const id = urlParams.get('id')
@@ -233,7 +262,7 @@ async function generateEmail(){
                 'Authorization': 'Bearer ' + window.localStorage.getItem("token")
             }
         };
-        let url = "http://127.0.0.1:8080/proxies"
+        let url = "http://privaterelay.asia:8080/proxies"
         let res = await fetch(url, requestOptions);
         return await res.json();
     } catch (error) {
@@ -243,6 +272,7 @@ async function generateEmail(){
 }
 
 async function renderProxy(){
+    validate()
     let emailAddress = await generateEmail();
     console.log(emailAddress);
     let proxy = document.getElementById("proxy")
@@ -268,7 +298,7 @@ async function createForward(){
             },
             body: JSON.stringify(_data),
         };
-        let url = "http://127.0.0.1:8080/forwards"
+        let url = "http://privaterelay.asia:8080/forwards"
         let res = await fetch(url, requestOptions);
         result = await res.json();
         await redirectToDetail(result.id, result.is_active);
@@ -281,6 +311,7 @@ async function createForward(){
 /* Deactivate */
 
 async function renderForwardDeactivate() {
+    validate()
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const id = urlParams.get('id')
@@ -317,7 +348,7 @@ async function activeForward(){
                 'Authorization': 'Bearer ' + window.localStorage.getItem("token")
             }
         };
-        let url = "http://127.0.0.1:8080/forwards/"+id+"/activate"
+        let url = "http://privaterelay.asia:8080/forwards/"+id+"/activate"
         let res = await fetch(url, requestOptions);
         result = await res.json();
         await redirectToDetail(result.id, result.is_active);
@@ -339,7 +370,7 @@ async function deleteForward(){
                 'Authorization': 'Bearer ' + window.localStorage.getItem("token")
             }
         };
-        let url = "http://127.0.0.1:8080/forwards/"+id
+        let url = "http://privaterelay.asia:8080/forwards/"+id
         let res = await fetch(url, requestOptions);
         await res.json();
         window.location = "/home.html";
@@ -372,7 +403,7 @@ async function updateForward(){
             },
             body: JSON.stringify(_data),
         };
-        let url = "http://127.0.0.1:8080/forwards"+id
+        let url = "http://privaterelay.asia:8080/forwards"+id
         let res = await fetch(url, requestOptions);
         result = await res.json();
         document.getElementById("update-button").hidden = true;
