@@ -206,7 +206,7 @@ async function redirectToHome() {
     const urlParams = new URLSearchParams(queryString);
     const id = urlParams.get('id');
     await deactivateForward(id);
-    window.location = "/home.html";
+    window.location = "/index.html";
 }
 
 async function renderDetailForward() {
@@ -362,7 +362,7 @@ async function deleteForward() {
         let url = "http://privaterelay.asia:8080/forwards/" + id
         let res = await fetch(url, requestOptions);
         await res.json();
-        window.location = "/home.html";
+        window.location = "/index.html";
     } catch (error) {
         console.log(error);
     }
