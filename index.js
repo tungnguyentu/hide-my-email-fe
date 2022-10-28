@@ -383,8 +383,8 @@ async function updateForward() {
     try {
         let _data = {
             destination: document.getElementById("forward-to").value,
-            label: document.getElementById("forward-title").value,
-            note: document.getElementById("forward-note").value
+            label: document.getElementById("label").value,
+            note: document.getElementById("note").value
         }
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
@@ -398,10 +398,11 @@ async function updateForward() {
             },
             body: JSON.stringify(_data),
         };
-        let url = "http://privaterelay.asia:8080/forwards" + id
+        let url = "http://privaterelay.asia:8080/forwards/" + id
         let res = await fetch(url, requestOptions);
         result = await res.json();
     } catch (error) {
+        alert(error)
         console.log(error);
     }
 }
