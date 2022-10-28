@@ -368,9 +368,15 @@ async function deleteForward() {
     }
 }
 
-
 function showUpdate() {
     document.getElementById("update-button").hidden = false;
+}
+
+
+function validateTitle() {
+    if (document.getElementById("label").value == ""){
+        return swal("Error", "Vui lòng điền tiêu đề", "error");
+    }
 }
 
 async function updateForward() {
@@ -395,7 +401,6 @@ async function updateForward() {
         let url = "http://privaterelay.asia:8080/forwards" + id
         let res = await fetch(url, requestOptions);
         result = await res.json();
-        document.getElementById("update-button").hidden = true;
     } catch (error) {
         console.log(error);
     }
