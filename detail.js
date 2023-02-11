@@ -10,7 +10,7 @@ async function detailForward(id) {
                 'Authorization': 'Bearer ' + auth
             }
         };
-        let url = "http://123.30.234.72:8080/forwards/" + id
+        let url = "http://123.30.234.72:8000/forwards/" + id
         let res = await fetch(url, requestOptions);
         return await res.json();
     } catch (error) {
@@ -29,7 +29,7 @@ async function deactivateForward(id) {
                 'Authorization': 'Bearer ' + auth
             }
         };
-        let url = "http://123.30.234.72:8080/forwards/"+id+"/deactivate"
+        let url = "http://123.30.234.72:8000/forwards/"+id+"/deactivate"
         let res = await fetch(url, requestOptions);
         return await res.json();
     } catch (error) {
@@ -114,7 +114,7 @@ async function updateForward(){
             },
             body: JSON.stringify(_data),
         };
-        let url = "http://123.30.234.72:8080/forwards/"+id
+        let url = "http://123.30.234.72:8000/forwards/"+id
         let res = await fetch(url, requestOptions);
         result = await res.json();
         document.getElementById("update-button").hidden = true;

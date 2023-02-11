@@ -36,7 +36,7 @@ async function detailForward(id) {
                 'Authorization': 'Bearer ' + auth
             }
         };
-        let url = "http://123.30.234.72:8080/forwards/" + id
+        let url = "http://123.30.234.72:8000/forwards/" + id
         let res = await fetch(url, requestOptions);
         return await res.json();
     } catch (error) {
@@ -59,7 +59,7 @@ async function activeForward(){
                 'Authorization': 'Bearer ' + auth
             }
         };
-        let url = "http://123.30.234.72:8080/forwards/"+id+"/activate"
+        let url = "http://123.30.234.72:8000/forwards/"+id+"/activate"
         let res = await fetch(url, requestOptions);
         result = await res.json();
         return window.location.href = "home.html"
@@ -82,7 +82,7 @@ async function deleteForward(){
                 'Authorization': 'Bearer ' + auth
             }
         };
-        let url = "http://123.30.234.72:8080/forwards/"+id
+        let url = "http://123.30.234.72:8000/forwards/"+id
         let res = await fetch(url, requestOptions);
         await res.json();
         window.location = "/home.html";

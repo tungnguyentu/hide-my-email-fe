@@ -12,7 +12,7 @@ async function login() {
             },
             body: data,
         };
-        let url = "http://123.30.234.72:8080/auth/token"
+        let url = "http://123.30.234.72:8000/auth/token"
         let res = await fetch(url, requestOptions);
         result = await res.json();
         if (result.access_token) {
@@ -42,7 +42,7 @@ async function register(){
             },
             body: JSON.stringify(_data),
         };
-        let url = "http://123.30.234.72:8080/auth/register"
+        let url = "http://123.30.234.72:8000/auth/register"
         let res = await fetch(url, requestOptions);
         result = await res.json();
         if (result.access_token) {
@@ -74,7 +74,7 @@ async function getForwards() {
                 'Authorization': 'Bearer ' + window.localStorage.getItem("token")
             }
         };
-        let res = await fetch("http://123.30.234.72:8080/forwards", requestOptions);
+        let res = await fetch("http://123.30.234.72:8000/forwards", requestOptions);
         return await res.json();
     } catch (error) {
         console.log(error);
@@ -142,7 +142,7 @@ async function detailForward(id) {
                 'Authorization': 'Bearer ' + window.localStorage.getItem("token")
             }
         };
-        let url = "http://123.30.234.72:8080/forwards/" + id
+        let url = "http://123.30.234.72:8000/forwards/" + id
         let res = await fetch(url, requestOptions);
         return await res.json();
     } catch (error) {
@@ -160,7 +160,7 @@ async function deactivateForward(id) {
                 'Authorization': 'Bearer ' + window.localStorage.getItem("token")
             }
         };
-        let url = "http://123.30.234.72:8080/forwards/"+id+"/deactivate"
+        let url = "http://123.30.234.72:8000/forwards/"+id+"/deactivate"
         let res = await fetch(url, requestOptions);
         return await res.json();
     } catch (error) {
@@ -230,7 +230,7 @@ async function generateEmail(){
                 'Authorization': 'Bearer ' + window.localStorage.getItem("token")
             }
         };
-        let url = "http://123.30.234.72:8080/proxies"
+        let url = "http://123.30.234.72:8000/proxies"
         let res = await fetch(url, requestOptions);
         return await res.json();
     } catch (error) {
@@ -264,7 +264,7 @@ async function createForward(){
             },
             body: JSON.stringify(_data),
         };
-        let url = "http://123.30.234.72:8080/forwards"
+        let url = "http://123.30.234.72:8000/forwards"
         let res = await fetch(url, requestOptions);
         result = await res.json();
         await redirectToDetail(result.id, result.is_active);
@@ -312,7 +312,7 @@ async function activeForward(){
                 'Authorization': 'Bearer ' + window.localStorage.getItem("token")
             }
         };
-        let url = "http://123.30.234.72:8080/forwards/"+id+"/activate"
+        let url = "http://123.30.234.72:8000/forwards/"+id+"/activate"
         let res = await fetch(url, requestOptions);
         result = await res.json();
         await redirectToDetail(result.id, result.is_active);
@@ -334,7 +334,7 @@ async function deleteForward(){
                 'Authorization': 'Bearer ' + window.localStorage.getItem("token")
             }
         };
-        let url = "http://123.30.234.72:8080/forwards/"+id
+        let url = "http://123.30.234.72:8000/forwards/"+id
         let res = await fetch(url, requestOptions);
         await res.json();
         window.location = "/home.html";
@@ -367,7 +367,7 @@ async function updateForward(){
             },
             body: JSON.stringify(_data),
         };
-        let url = "http://123.30.234.72:8080/forwards"+id
+        let url = "http://123.30.234.72:8000/forwards"+id
         let res = await fetch(url, requestOptions);
         result = await res.json();
         document.getElementById("update-button").hidden = true;

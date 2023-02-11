@@ -33,7 +33,7 @@ async function login() {
             },
             body: data,
         };
-        let url = "http://123.30.234.72:8080/auth/token"
+        let url = "http://123.30.234.72:8000/auth/token"
         let res = await fetch(url, requestOptions);
         result = await res.json();
         if (result.access_token) {

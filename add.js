@@ -12,7 +12,7 @@ async function generateEmail(){
                 'Authorization': 'Bearer ' + auth
             }
         };
-        let url = "http://123.30.234.72:8080/proxies"
+        let url = "http://123.30.234.72:8000/proxies"
         let res = await fetch(url, requestOptions);
         return await res.json();
     } catch (error) {
@@ -70,7 +70,7 @@ async function createForward(){
             },
             body: JSON.stringify(_data),
         };
-        let url = "http://123.30.234.72:8080/forwards"
+        let url = "http://123.30.234.72:8000/forwards"
         let res = await fetch(url, requestOptions);
         result = await res.json();
         window.location.href = "/home.html"

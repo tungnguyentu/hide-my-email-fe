@@ -9,7 +9,7 @@ async function getForwards() {
                 'Authorization': 'Bearer ' + auth
             }
         };
-        let res = await fetch("http://123.30.234.72:8080/forwards", requestOptions);
+        let res = await fetch("http://123.30.234.72:8000/forwards", requestOptions);
         result = await res.json()
         return result;
     } catch (error) {

@@ -28,7 +28,7 @@ async function register(){
             },
             body: JSON.stringify(_data),
         };
-        let url = "http://123.30.234.72:8080/auth/register"
+        let url = "http://123.30.234.72:8000/auth/register"
         let res = await fetch(url, requestOptions);
         result = await res.json();
         if (result.access_token) {
