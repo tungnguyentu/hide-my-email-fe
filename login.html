@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
     <link rel="stylesheet" href="/assets/css/untitled.css">
     <link rel="stylesheet" href="/assets/css/vanilla-zoom.min.css">
-    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="login.js"></script>
 </head>
 
 <body>
@@ -43,7 +43,7 @@
                 </div>
                 <form id="login" style="border-bottom-left-radius: 8px;border-bottom-right-radius: 8px;border-top-left-radius: 8px;border-top-right-radius: 8px;">
                     <div class="mb-3"><label class="form-label" for="email" style="font-family: 'San Francisco Display';">Email</label><input class="form-control item" type="email" id="email" style="border-top-right-radius: 8px;border-top-left-radius: 8px;border-bottom-right-radius: 8px;border-bottom-left-radius: 8px;" required></div>
-                    <div class="mb-3"><label class="form-label" for="password" style="font-family: 'San Francisco Display';">Password</label><input class="form-control" type="password" id="password" style="border-top-left-radius: 8px;border-top-right-radius: 8px;border-bottom-right-radius: 8px;border-bottom-left-radius: 8px;" required></div>
+                    <div class="mb-3"><label class="form-label" for="password" style="font-family: 'San Francisco Display';">Mật khẩu</label><input class="form-control" type="password" id="password" style="border-top-left-radius: 8px;border-top-right-radius: 8px;border-bottom-right-radius: 8px;border-bottom-left-radius: 8px;" required></div>
                     <div class="mb-3">
                         <div class="form-check"><input class="form-check-input" type="checkbox" id="checkbox" style="border-bottom-left-radius: 8px;border-bottom-right-radius: 8px;border-top-right-radius: 8px;border-top-left-radius: 8px;"><label class="form-check-label" for="checkbox" style="font-family: 'San Francisco Display';">Remember me</label></div>
                     </div><button class="btn btn-primary" type="submit" style="font-family: 'San Francisco Display';border-bottom-left-radius: 8px;border-bottom-right-radius: 8px;border-top-right-radius: 8px;border-top-left-radius: 8px;">Đăng nhập</button>
@@ -61,7 +61,7 @@
     <script src="/assets/js/vanilla-zoom.js"></script>
     <script src="/assets/js/theme.js"></script>
     <script src="/assets/js/Auto-Modal-Popup.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         const form = document.getElementById('login');
         form.addEventListener('submit', function(e) {

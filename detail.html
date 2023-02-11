@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
     <link rel="stylesheet" href="/assets/css/untitled.css">
     <link rel="stylesheet" href="/assets/css/vanilla-zoom.min.css">
-    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="detail.js"></script>
 </head>
 
 <body onload="renderDetailForward()">
@@ -53,7 +53,7 @@
                             <div class="col" style="padding-left: 100px;"><span style="font-family: 'San Francisco Display';font-size: 16px;">Chuyển tiếp đến:</span></div>
                         </div>
                         <div class="row">
-                            <div class="col" style="padding-left: 100px;"><input onclick="showUpdate()" type="text" size="30" name="fname" id="forward-to" style="font-family: 'San Francisco Display';border-top-left-radius: 8px;border-top-right-radius: 8px;border-bottom-right-radius: 8px;border-bottom-left-radius: 8px;height: 40px;border-style: double;border-color: #d2d2d8;font-size: 16px;font-family: 'San Francisco Display';font-size: 16px;font-weight: bold;text-shadow: 0px 0px;"><br><b></b></div>
+                            <div class="col" style="padding-left: 100px;"><span type="text" id="forward-to" style="font-family: 'San Francisco Display';height: 40px;font-size: 16px;font-family: 'San Francisco Display';font-size: 16px;font-weight: bold;text-shadow: 0px 0px;"></span><br><b></b></div>
                         </div>
                         <div class="row">
                             <div class="col"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
@@ -61,8 +61,18 @@
                         <div class="row">
                             <div class="col-xl-12" style="height: 83px;padding-left: 100px;padding-right: 100px;">
                                 <!-- Start: Gamanet_Input_v1 -->
+                                <span style="font-family: 'San Francisco Display';font-size: 16px;">Mật khẩu:</span>
                                 <div class="gamanet-input-group d-flex flex-column">
-                                    <div class="error-msg d-none"><img class="me-1" src="/assets/img/icon_alert-circle-redfill_16.svg"><span style="font-size: 0.75rem;">Text</span></div><input onclick="showUpdate()" id="label" type="text" style="width: 910px;border-top-left-radius: 8px;border-top-right-radius: 8px;border-bottom-right-radius: 8px;border-bottom-left-radius: 8px;height: 40px;border-style: double;border-color: #d2d2d8;font-size: 16px;font-family: 'San Francisco Display';" placeholder="Tiêu đề (ví dụ: Mua Sắm)">
+                                    <div class="error-msg d-none"><img class="me-1" src="/assets/img/icon_alert-circle-redfill_16.svg"><span style="font-size: 0.75rem;">Text</span></div><input onclick="showUpdate()" id="password" type="text" style="width: 910px;border-top-left-radius: 8px;border-top-right-radius: 8px;border-bottom-right-radius: 8px;border-bottom-left-radius: 8px;height: 40px;border-style: double;border-color: #d2d2d8;font-size: 16px;font-family: 'San Francisco Display';" placeholder="Mật khẩu cho trang web">
+                                </div><!-- End: Gamanet_Input_v1 -->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-12" style="height: 83px;padding-left: 100px;padding-right: 100px;">
+                                <!-- Start: Gamanet_Input_v1 -->
+                                <span style="font-family: 'San Francisco Display';font-size: 16px;">Đường dẫn:</span>
+                                <div class="gamanet-input-group d-flex flex-column">
+                                    <div class="error-msg d-none"><img class="me-1" src="/assets/img/icon_alert-circle-redfill_16.svg"><span style="font-size: 0.75rem;">Text</span></div><input onclick="showUpdate()" id="label" type="text" style="width: 910px;border-top-left-radius: 8px;border-top-right-radius: 8px;border-bottom-right-radius: 8px;border-bottom-left-radius: 8px;height: 40px;border-style: double;border-color: #d2d2d8;font-size: 16px;font-family: 'San Francisco Display';" placeholder="Đường dẫn (ví dụ: google.com)">
                                 </div><!-- End: Gamanet_Input_v1 -->
                             </div>
                         </div>
@@ -83,7 +93,6 @@
                             <div class="col-xxl-6" style="padding-left: 100px;padding-right: 100px;"><button class="btn btn-primary" type="button" style="padding-right: 54px;padding-left: 45px;margin-left: 2px;margin-right: 5px;color: var(--bs-black);font-weight: bold;background: #e8e8ee;--bs-primary: #c3c7cd;--bs-primary-rgb: 195,199,205;--bs-info: #ccd5dc;--bs-info-rgb: 204,213,220;font-family: 'San Francisco Display';border-color: #e8e8ee;border-bottom-left-radius: 8px;border-bottom-right-radius: 8px;border-top-right-radius: 8px;border-top-left-radius: 8px;text-shadow: 0px 0px;" onclick="history.back()" >Trở lại</button></div>
                             <div class="col-xxl-5" style="padding-right: 2px;padding-left: 246px;"><button hidden id="update-button" class="btn btn-primary" type="button" style="padding-right: 54px;padding-left: 45px;margin-left: 2px;margin-right: 5px;color: var(--bs-btn-disabled-color);font-weight: bold;background: #0d6efd;--bs-primary: #c3c7cd;--bs-primary-rgb: 195,199,205;--bs-info: #ccd5dc;--bs-info-rgb: 204,213,220;font-family: 'San Francisco Display';border-color: #e8e8ee;border-bottom-left-radius: 8px;border-bottom-right-radius: 8px;border-top-right-radius: 8px;border-top-left-radius: 8px;text-shadow: 0px 0px;" onclick="updateForward()">Lưu các thay đổi</button></div>
                         </div><span></span>
-                        
                     </div>
                 </div>
             </div>

@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
     <link rel="stylesheet" href="/assets/css/untitled.css">
     <link rel="stylesheet" href="/assets/css/vanilla-zoom.min.css">
-    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="add.js"></script>
 </head>
 
 <body onload="renderProxy()">
@@ -41,7 +41,7 @@
                             <p style="font-size: 15px;font-family: 'San Francisco Display';"><span style="color: rgb(109, 110, 114); background-color: rgb(255, 255, 255);">Bảo đảm sự riêng tư cho địa chỉ email cá nhân bằng cách tạo các địa chỉ ngẫu nhiên,</span><br><span style="color: rgb(109, 110, 114); background-color: rgb(255, 255, 255);">duy nhất để chuyển tiếp vào hộp thư đến cá nhân của bạn và bạn có thể xóa chúng bất cứ lúc nào.</span></p>
                         </div>
                         <div class="row">
-                            <div class="col" style="padding-right: 100px;padding-left: 463px;height: 40px;"><span id="proxy" style="font-family: 'San Francisco Display';font-size: 16px;font-weight: bold;text-shadow: 0px 0px;">example@privaterelay.asia</span></div>
+                            <div class="col" style="padding-right: 100px;padding-left: 440px;height: 40px;"><span id="proxy" style="font-family: 'San Francisco Display';font-size: 16px;font-weight: bold;text-shadow: 0px 0px;">example@privaterelay.asia</span></div>
                         </div>
                         <div class="row">
                             <div class="col" style="padding-left: 446px;"><button onclick="renderProxy()" class="button button-link button-rounded-rectangle" type="button"><svg viewBox="0 0 87.3046875 118.4072265625" version="1.1" xmlns="http://www.w3.org/2000/svg" class=" glyph-box" style="height: 15.1244px; width: 15px; fill:#007aff;"><g transform="matrix(1 0 0 1 -8.740268554687418 94.43359375)"><path d="M 50.9766 -43.8965 C 52.3926 -43.8965 53.5156 -44.3359 54.3945 -45.2637 L 74.4141 -65.4297 C 75.4883 -66.5039 75.9766 -67.6758 75.9766 -69.043 C 75.9766 -70.3613 75.4395 -71.6309 74.4141 -72.6074 L 54.3945 -92.9688 C 53.5156 -93.9453 52.3926 -94.4336 50.9766 -94.4336 C 48.3398 -94.4336 46.2402 -92.2363 46.2402 -89.5508 C 46.2402 -88.2324 46.7285 -87.1582 47.5586 -86.2305 L 59.2285 -74.8047 C 56.9336 -75.1465 54.5898 -75.3418 52.2461 -75.3418 C 28.0762 -75.3418 8.74023 -56.0059 8.74023 -31.7871 C 8.74023 -7.56836 28.2227 11.9141 52.3926 11.9141 C 76.6113 11.9141 96.0449 -7.56836 96.0449 -31.7871 C 96.0449 -34.7168 93.9941 -36.8164 91.0645 -36.8164 C 88.2324 -36.8164 86.3281 -34.7168 86.3281 -31.7871 C 86.3281 -12.9395 71.2402 2.19727 52.3926 2.19727 C 33.5938 2.19727 18.457 -12.9395 18.457 -31.7871 C 18.457 -50.7812 33.4473 -65.8203 52.2461 -65.8203 C 55.4199 -65.8203 58.3496 -65.5762 60.9375 -65.1367 L 47.6074 -51.9531 C 46.7285 -51.0742 46.2402 -50 46.2402 -48.6816 C 46.2402 -45.9961 48.3398 -43.8965 50.9766 -43.8965 Z"></path></g></svg>Sử dụng địa chỉ email khác</button></div>
@@ -49,18 +49,17 @@
                         <div class="row">
                             <div class="col"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></div>
                         </div>
-                        <div class="row">
+                        <div class="row" style="margin-top: -100px;">
                             <div class="col-xl-12" style="height: 90px;padding-left: 100px;padding-right: 100px;">
                                 <!-- Start: Gamanet_Input_v1 -->
                                 <div class="gamanet-input-group d-flex flex-column">
-                                    <div class="row">
-                                        <div class="col" style="padding-left: 415px;height: 32.6px;"><span style="font-family: 'San Francisco Display';font-weight: bold;text-shadow: 0px 0px;">Chuyển tiếp đến:</span></div>
-                                    </div>
                                     <div class="error-msg d-none"><img class="me-1" src="/assets/img/icon_alert-circle-redfill_16.svg"><span style="font-size: 0.75rem;">Text</span></div>
                                 </div><!-- End: Gamanet_Input_v1 -->
+                            </div>
+                            <div class="col-xl-12" style="height: 91px;padding-left: 100px;padding-right: 100px;">
                                 <div class="row">
-                                    <div class="col" style="padding-left: 345px;"><input required id="forward-to" type="text" style="width: 250px;border-top-left-radius: 8px;border-top-right-radius: 8px;border-bottom-right-radius: 8px;border-bottom-left-radius: 8px;border-color: #d2d2d8;border-top-style: double;border-top-color: #d2d2d8;border-right-color: #d2d2d8;border-bottom-color: #d2d2d8;border-left-style: double;border-left-color: #d2d2d8;height: 35.6px;color: var(--bs-black);--bs-dark-rgb: 5,126,248;font-family: 'San Francisco Display';font-size: 16px;" placeholder="Địa chỉ email"></div>
-                                </div>
+                                    <div class="col" style="height: 29.6px;"><span style="font-size: 16px;font-weight: bold;font-family: 'San Francisco Display';text-shadow: 0px 0px;">Đường dẫn:</span></div>
+                                </div><input id="forward-title" type="text" style="width: 910px;border-top-left-radius: 8px;border-top-right-radius: 8px;border-bottom-right-radius: 8px;border-bottom-left-radius: 8px;height: 40px;border-style: double;border-color: #d2d2d8;font-size: 16px;font-family: 'San Francisco Display';" placeholder="Thêm đường dẫn(ví dụ: google.com)" required>
                             </div>
                             <div class="col-xl-12" style="height: 91px;padding-left: 100px;padding-right: 100px;">
                                 <!-- Start: Gamanet_Input_v1 -->
@@ -68,8 +67,8 @@
                                     <div class="error-msg d-none"><img class="me-1" src="/assets/img/icon_alert-circle-redfill_16.svg"><span style="font-size: 0.75rem;">Text</span></div>
                                 </div><!-- End: Gamanet_Input_v1 -->
                                 <div class="row">
-                                    <div class="col" style="height: 29.6px;"><span style="font-size: 16px;font-weight: bold;font-family: 'San Francisco Display';text-shadow: 0px 0px;">Tiêu Đề:</span></div>
-                                </div><input id="forward-title" type="text" style="width: 910px;border-top-left-radius: 8px;border-top-right-radius: 8px;border-bottom-right-radius: 8px;border-bottom-left-radius: 8px;height: 40px;border-style: double;border-color: #d2d2d8;font-size: 16px;font-family: 'San Francisco Display';" placeholder="Thêm tiêu đề (ví dụ: Mua Sắm)" required>
+                                    <div class="col" style="height: 29.6px;"><span style="font-size: 16px;font-weight: bold;font-family: 'San Francisco Display';text-shadow: 0px 0px;">Mật khẩu:</span></div>
+                                </div><input id="password" type="text" style="width: 910px;border-top-left-radius: 8px;border-top-right-radius: 8px;border-bottom-right-radius: 8px;border-bottom-left-radius: 8px;height: 40px;border-style: double;border-color: #d2d2d8;font-size: 16px;font-family: 'San Francisco Display';" placeholder="Mật khẩu cho trang web khi đăng nhập (không bắt buộc)">
                             </div>
                             <div class="col" style="padding-left: 105px;height: 27.6px;"><span style="font-family: 'San Francisco Display';font-size: 16px;text-shadow: 0px 0px;font-weight: bold;">Ghi Chú:</span></div>
                         </div>
@@ -101,6 +100,7 @@
     <script src="/assets/js/vanilla-zoom.js"></script>
     <script src="/assets/js/theme.js"></script>
     <script src="/assets/js/Auto-Modal-Popup.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

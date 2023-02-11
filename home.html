@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
     <link rel="stylesheet" href="/assets/css/untitled.css?h=6ec99cdc6b76666fd300ebccba283933">
     <link rel="stylesheet" href="/assets/css/vanilla-zoom.min.css?h=e737f76df021b46fa7180f48799a5d20">
-    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="items.js"></script>
 </head>
 
 <body onload="renderForwards()">
@@ -51,11 +51,11 @@
                         </div>
                     </div>
                     <div class="row" style="width: 1160px;padding-right: 100px;padding-left: 100px;">
-                        <div class="col-xxl-5"><span id="active-quantity" style="font-family: 'San Francisco Display';text-shadow: 0px 0px;">X địa chỉ email đang hoạt động</span></div>
-                        <div class="col" style="padding-left: 463px;height: 52px;"><button onclick="redirectNew()" class="btn btn-primary" type="button" style="background: var(--bs-blue);color: var(--bs-btn-hover-color);text-shadow: 0px 0px;border-color: #e8e8ee;border-top-left-radius: 8px;border-top-right-radius: 8px;border-bottom-right-radius: 8px;border-bottom-left-radius: 8px;padding-top: 0px;padding-bottom: 2px;">Thêm</button></div>
+                        <div class="col-xxl-5"><span id="active-quantity" style="font-family: 'San Francisco Display';text-shadow: 0px 0px;">0 địa chỉ email đang hoạt động</span></div>
+                        <div class="col" style="padding-left: 463px;height: 52px;"><button onclick="redirectAddItem()" class="btn btn-primary" type="button" style="background: var(--bs-blue);color: var(--bs-btn-hover-color);text-shadow: 0px 0px;border-color: #e8e8ee;border-top-left-radius: 8px;border-top-right-radius: 8px;border-bottom-right-radius: 8px;border-bottom-left-radius: 8px;padding-top: 0px;padding-bottom: 2px;">Thêm</button></div>
                     </div>
                     <div id="active-item">
-                    <div class="row" style="width: 1160px;padding-right: 100px;padding-left: 100px;height: 123px;">
+                    <!-- <div class="row" style="width: 1160px;padding-right: 100px;padding-left: 100px;height: 123px;">
                         <div class="col">
                             <div class="card">
                                 <div class="card-body" data-aos="fade" style="height: 80px;border-top-left-radius: 8px;border-top-right-radius: 8px;border-bottom-right-radius: 8px;border-bottom-left-radius: 8px;border-width: 2px;box-shadow: 6px 6px 2px 2px var(--bs-card-cap-bg);">
@@ -64,14 +64,14 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     </div>
 
                     <div class="row" style="width: 1160px;padding-right: 100px;padding-left: 100px;">
-                        <div class="col" style="height: 52px;"><span id="deactivate-quantity" style="font-family: 'San Francisco Display';text-shadow: 0px 0px;">X địa chỉ email không hoạt động</span></div>
+                        <div class="col" style="height: 52px;"><span id="deactivate-quantity" style="font-family: 'San Francisco Display';text-shadow: 0px 0px;">0 địa chỉ email không hoạt động</span></div>
                     </div>
                     <div id="deactivate-item">
-                    <div class="row" style="width: 1160px;padding-right: 100px;padding-left: 100px;">
+                    <!-- <div class="row" style="width: 1160px;padding-right: 100px;padding-left: 100px;">
                         <div class="col">
                             <div class="card">
                                 <div class="card-body" style="height: 80px;border-bottom-left-radius: 8px;border-bottom-right-radius: 8px;border-top-right-radius: 8px;border-top-left-radius: 8px;border-width: 2px;box-shadow: 6px 6px 2px 2px var(--bs-card-cap-bg);">
@@ -80,7 +80,7 @@
                                 </div>
                             </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     </div>
                 </div>
@@ -98,6 +98,7 @@
     <script src="/assets/js/vanilla-zoom.js?h=6a37ea9c996b05f763161c73127d66bc"></script>
     <script src="/assets/js/theme.js?h=a083aeb15550c5e1266c666e8a5846d9"></script>
     <script src="/assets/js/Auto-Modal-Popup.js?h=04a3a6472589fe4f36ee08ae381a6704"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
